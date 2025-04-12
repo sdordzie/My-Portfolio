@@ -21,26 +21,40 @@ const projects = [
 ];
 
 // Function to render projects
-function renderProjects() {
+function renderProjects(projectsToRender = projects) {
   const container = document.getElementById("projects-container");
+  container.innerHTML = ''; // Clear existing content
   
-  projects.forEach(project => {
+  projectsToRender.forEach(project => {
     const card = document.createElement("div");
     card.className = "project-card";
-   card.innerHTML = `
-  <h3>${project.title}</h3>
-  <p>${project.description}</p>
-  <div class="tags">${project.tags.map(tag => `<span>${tag}</span>`).join("")}</div>
-  ${project.link ? 
-    `<a href="${project.link}" target="_blank">View Project</a>` : 
-    `<button class="coming-soon">Coming Soon</button>`
+    card.innerHTML = `
+      <h3>${project.title}</h3>
+      <p>${project.description}</p>
+      <div class="tags">${project.tags.map(tag => `<span>${tag}</span>`).join("")}</div>
+      ${project.link ? 
+        `<a href="${project.link}" target="_blank" rel="noopener noreferrer">View Project</a>` : 
+        `<button class="coming-soon">Coming Soon</button>`
+      }
     `;
     container.appendChild(card);
   });
 }
 
+// Filter function
+function filterProjects(tag) {
+  const filtered = tag === 'all' 
+    ? projects 
+    : projects.filter(p => p.tags.includes(tag));
+  renderProjects(filtered);
+}
+
 // Run when page loads
-document.addEventListener("DOMContentLoaded", renderProjects);
+document.addEventListener("DOMContentLoaded", () => {
+  renderProjects();
+  
+  // Optional: Add filter buttons event listeners here
+});
 
 // Add to projects.js
 function filterProjects(tag) {
