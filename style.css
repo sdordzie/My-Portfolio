@@ -89,12 +89,29 @@ footer {
   margin-top: 0;
 }
 
+/* For Option A */
+.coming-soon {
+  background: #cccccc;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: not-allowed;
+}
+
+/* For Option B */
 .project-card a {
   display: inline-block;
-  margin-top: 10px;
-  color: #0077b6;
+  background: #0077b6;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
   text-decoration: none;
-  font-weight: bold;
+  margin-top: 10px;
+}
+
+.dark-mode .project-card a {
+  background: #48cae4;
 }
 
 .project-card a {
