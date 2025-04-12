@@ -1,0 +1,52 @@
+/* Reset default margins */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+header {
+    background: #0077b6;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.about, .projects {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer {
+    background: #f8f9fa;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.dark-mode {
+    background: #121212;
+    color: #ffffff;
+}
+
+.dark-mode header {
+    background: #0d1b2a;
+}
+
+#dark-mode-toggle {
+    background: #0077b6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+#dark-mode-toggle:hover {
+    background: #023e8a;
+}
