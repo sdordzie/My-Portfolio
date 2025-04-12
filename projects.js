@@ -39,3 +39,11 @@ function renderProjects() {
 
 // Run when page loads
 document.addEventListener("DOMContentLoaded", renderProjects);
+
+// Add to projects.js
+function filterProjects(tag) {
+    const filtered = tag === 'all' 
+        ? projects 
+        : projects.filter(p => p.tags.includes(tag));
+    renderFilteredProjects(filtered);
+}
