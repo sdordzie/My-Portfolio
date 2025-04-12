@@ -15,6 +15,10 @@ header {
     padding: 2rem 0;
 }
 
+body, header {
+    transition: all 0.4s ease;
+}
+
 .about, .projects {
     padding: 2rem;
     max-width: 800px;
