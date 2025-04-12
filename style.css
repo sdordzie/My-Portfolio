@@ -93,6 +93,11 @@ footer {
   font-weight: bold;
 }
 
+.project-card a {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
 .dark-mode .project-card {
   background: #1e1e1e;
 }
@@ -117,4 +122,10 @@ footer {
 
 .dark-mode .tags span {
   background: #333;
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
